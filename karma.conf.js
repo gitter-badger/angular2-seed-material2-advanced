@@ -43,6 +43,8 @@ module.exports = function (config) {
       // Angular itself
       { pattern: 'node_modules/@angular/**/*.js', included: false, watched: true },
       { pattern: 'node_modules/@angular/**/*.js.map', included: false, watched: false },
+      { pattern: 'node_modules/@angular2-material/**/*.js', included: false, watched: true },
+      { pattern: 'node_modules/@angular2-material/**/*.js.map', included: false, watched: false },
 
       // Advanced seed
       { pattern: 'node_modules/lodash/**/*.js', included: false, watched: false },
