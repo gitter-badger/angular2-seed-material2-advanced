@@ -32,6 +32,8 @@ export class ProjectConfig extends SeedAdvancedConfig {
     /* Add to or override NPM module configurations: */
     // this.mergeObject(this.PLUGIN_CONFIGS['browser-sync'], { ghostMode: false });
 
+    this.APP_TITLE = 'Driftlog';
+
     const components = [
       'button',
       'card',
@@ -54,8 +56,24 @@ export class ProjectConfig extends SeedAdvancedConfig {
       'tooltip'
     ];
 
+    this.SYSTEM_CONFIG['packageConfigPaths'] = [
+      `${this.APP_BASE}node_modules/*/package.json`,
+      `${this.APP_BASE}node_modules/@ngrx/*/package.json`,
+      `${this.APP_BASE}node_modules/@angular2-material/*/package.json`
+    ];
     components.forEach(name => {
       this.SYSTEM_CONFIG.paths[`@angular2-material/${name}`] = `${this.APP_BASE}node_modules/@angular2-material/${name}/${name}.umd.js`;
+    });
+
+
+    this.SYSTEM_BUILDER_CONFIG['packages']['.'] = {
+      defaultExtension: 'js'
+    };
+    components.forEach(name => {
+      this.SYSTEM_BUILDER_CONFIG.packages[`@angular2-material/${name}`] = {
+        format: 'cjs',
+        main: `${name}.umd.js`
+      };
     });
   }
 

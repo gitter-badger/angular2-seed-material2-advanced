@@ -336,8 +336,7 @@ export class SeedConfig {
     packageConfigPaths: [
       `/node_modules/*/package.json`,
       `/node_modules/**/package.json`,
-      `/node_modules/@angular/*/package.json`,
-      `/node_modules/@angular2-material/*/package.json`
+      `/node_modules/@angular/*/package.json`
     ],
     paths: {
       [this.BOOTSTRAP_MODULE]: `${this.APP_BASE}${this.BOOTSTRAP_MODULE}`,
@@ -382,7 +381,58 @@ export class SeedConfig {
    * The system builder configuration of the application.
    * @type {any}
    */
-  SYSTEM_BUILDER_CONFIG: any = this.composeSystemBuildConfig();
+  SYSTEM_BUILDER_CONFIG: any = {
+    defaultJSExtensions: true,
+    packageConfigPaths: [
+      join(this.PROJECT_ROOT, 'node_modules', '*', 'package.json'),
+      join(this.PROJECT_ROOT, 'node_modules', '@angular', '*', 'package.json')
+    ],
+    paths: {
+      [`${this.TMP_DIR}/*`]: `${this.TMP_DIR}/*`,
+      '*': 'node_modules/*'
+    },
+    packages: {
+      '@angular/common': {
+        main: 'index.js',
+        defaultExtension: 'js'
+      },
+      '@angular/compiler': {
+        main: 'index.js',
+        defaultExtension: 'js'
+      },
+      '@angular/core/testing': {
+        main: 'index.js',
+        defaultExtension: 'js'
+      },
+      '@angular/core': {
+        main: 'index.js',
+        defaultExtension: 'js'
+      },
+      '@angular/forms': {
+        main: 'index.js',
+        defaultExtension: 'js'
+      },
+      '@angular/http': {
+        main: 'index.js',
+        defaultExtension: 'js'
+      },
+      '@angular/platform-browser': {
+        main: 'index.js',
+        defaultExtension: 'js'
+      },
+      '@angular/platform-browser-dynamic': {
+        main: 'index.js',
+        defaultExtension: 'js'
+      },
+      '@angular/router': {
+        main: 'index.js',
+        defaultExtension: 'js'
+      },
+      'rxjs': {
+        defaultExtension: 'js'
+      }
+    }
+  };
 
   /**
    * The Autoprefixer configuration for the application.
@@ -460,100 +510,6 @@ export class SeedConfig {
       }
     }
   };
-
-  /**
-   * Compose the SYSTEM_BUILDER_CONFIG object
-   */
-  composeSystemBuildConfig(): any {
-
-    const SYSTEM_BUILDER_CONFIG: any = {
-      defaultJSExtensions: true,
-      packageConfigPaths: [
-        join(this.PROJECT_ROOT, 'node_modules', '*', 'package.json'),
-        join(this.PROJECT_ROOT, 'node_modules', '@angular', '*', 'package.json'),
-        join(this.PROJECT_ROOT, 'node_modules', '@angular2-material', '*', 'package.json')
-      ],
-      paths: {
-        [`${this.TMP_DIR}/*`]: `${this.TMP_DIR}/*`,
-        '*': 'node_modules/*'
-      },
-      packages: {
-        '@angular/common': {
-          main: 'index.js',
-          defaultExtension: 'js'
-        },
-        '@angular/compiler': {
-          main: 'index.js',
-          defaultExtension: 'js'
-        },
-        '@angular/core/testing': {
-          main: 'index.js',
-          defaultExtension: 'js'
-        },
-        '@angular/core': {
-          main: 'index.js',
-          defaultExtension: 'js'
-        },
-        '@angular/forms': {
-          main: 'index.js',
-          defaultExtension: 'js'
-        },
-        '@angular/http': {
-          main: 'index.js',
-          defaultExtension: 'js'
-        },
-        '@angular/platform-browser': {
-          main: 'index.js',
-          defaultExtension: 'js'
-        },
-        '@angular/platform-browser-dynamic': {
-          main: 'index.js',
-          defaultExtension: 'js'
-        },
-        '@angular/router': {
-          main: 'index.js',
-          defaultExtension: 'js'
-        },
-        'rxjs': {
-          defaultExtension: 'js'
-        },
-        '.': {
-          defaultExtension: 'js'
-        }
-      }
-    };
-
-    const components = [
-      'button',
-      'card',
-      'checkbox',
-      'dialog',
-      'grid-list',
-      'icon',
-      'input',
-      'list',
-      'menu',
-      'progress-bar',
-      'progress-circle',
-      'radio',
-      'sidenav',
-      'slider',
-      'slide-toggle',
-      'button-toggle',
-      'tabs',
-      'toolbar',
-      'tooltip'
-    ];
-
-    components.forEach(name => {
-      SYSTEM_BUILDER_CONFIG.packages[`@angular2-material/${name}`] = {
-        format: 'cjs',
-        main: `${name}.umd.js`
-      };
-    });
-
-    return SYSTEM_BUILDER_CONFIG;
-  }
 
   /**
    * Recursively merge source onto target.
