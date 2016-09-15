@@ -34,6 +34,8 @@ export class ProjectConfig extends SeedAdvancedConfig {
 
     this.APP_TITLE = 'Driftlog';
 
+    this.ENABLE_SCSS = true;
+
     const components = [
       'button',
       'card',
