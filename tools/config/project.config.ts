@@ -31,6 +31,32 @@ export class ProjectConfig extends SeedAdvancedConfig {
 
     /* Add to or override NPM module configurations: */
     // this.mergeObject(this.PLUGIN_CONFIGS['browser-sync'], { ghostMode: false });
+
+    const components = [
+      'button',
+      'card',
+      'checkbox',
+      'dialog',
+      'grid-list',
+      'icon',
+      'input',
+      'list',
+      'menu',
+      'progress-bar',
+      'progress-circle',
+      'radio',
+      'sidenav',
+      'slider',
+      'slide-toggle',
+      'button-toggle',
+      'tabs',
+      'toolbar',
+      'tooltip'
+    ];
+
+    components.forEach(name => {
+      this.SYSTEM_CONFIG.paths[`@angular2-material/${name}`] = `${this.APP_BASE}node_modules/@angular2-material/${name}/${name}.umd.js`;
+    });
   }
 
 }

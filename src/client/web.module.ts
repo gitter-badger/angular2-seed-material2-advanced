@@ -16,6 +16,8 @@ import { AnalyticsModule } from './app/frameworks/analytics/analytics.module';
 import { MultilingualModule } from './app/frameworks/i18n/multilingual.module';
 import { SampleModule } from './app/frameworks/sample/sample.module';
 
+import { AboutModule } from './app/components/about/about.module';
+
 // config
 import { Config, WindowService, ConsoleService } from './app/frameworks/core/index';
 Config.PLATFORM_TARGET = Config.PLATFORMS.WEB;
@@ -45,12 +47,12 @@ if (String('<%= TARGET_DESKTOP %>') === 'true') {
     routerModule,
     AnalyticsModule,
     MultilingualModule,
-    SampleModule
+    SampleModule,
+    AboutModule
   ],
   declarations: [
     AppComponent,
-    HomeComponent,
-    AboutComponent
+    HomeComponent
   ],
   providers: [
     {
