@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import {MaterialModule} from "./app/frameworks/material/material.module";
+import {MaterialModule} from "./material/material.module";
 
 
 @NgModule({

@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home.component';
 import { NameListService } from '../../frameworks/sample/services/name-list.service';
 import { MultilingualModule } from '../../frameworks/i18n/multilingual.module';
-import {PlatformModule} from "../../../platform.module";
+import {PlatformModule} from "../../../platform/index";
 
 @NgModule({
   imports: [

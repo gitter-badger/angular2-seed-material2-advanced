@@ -15,7 +15,7 @@ import { CoreModule } from './app/frameworks/core/core.module';
 import { AnalyticsModule } from './app/frameworks/analytics/analytics.module';
 import { MultilingualModule } from './app/frameworks/i18n/multilingual.module';
 import { SampleModule } from './app/frameworks/sample/sample.module';
-import {MaterialModule} from "./app/frameworks/material/material.module";
+import {PlatformModule} from "./platform/index";
 
 // config
 import { Config, WindowService, ConsoleService } from './app/frameworks/core/index';
@@ -47,6 +47,7 @@ if (String('<%= TARGET_DESKTOP %>') === 'true') {
     routerModule,
     AnalyticsModule,
     MultilingualModule,
+    PlatformModule,
     SampleModule,
     AboutModule,
     HomeModule
