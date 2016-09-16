@@ -1,11 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MdCardModule } from '@angular2-material/card';
 import { AboutComponent } from './about.component';
+import {PlatformModule} from "../../../platform.module";
 
 
 @NgModule({
-  imports: [CommonModule, MdCardModule],
+  imports: [
+    CommonModule,
+    PlatformModule
+  ],
   declarations: [AboutComponent],
   exports: [AboutComponent]
 })

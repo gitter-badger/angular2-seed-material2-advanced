@@ -6,9 +6,6 @@ import { RouterModule } from '@angular/router';
 
 // libs
 import { StoreModule } from '@ngrx/store';
-import { MdButtonModule } from '@angular2-material/button';
-import { MdToolbarModule } from '@angular2-material/toolbar';
-import { MdIconModule, MdIconRegistry } from '@angular2-material/icon';
 
 // app
 import { ToolbarComponent } from './components/toolbar.component';
@@ -16,6 +13,7 @@ import { NavbarComponent } from './components/navbar.component';
 import { nameListReducer, NameListService } from './services/name-list.service';
 import { MultilingualModule } from '../i18n/multilingual.module';
 import { multilingualReducer, MultilingualStateI } from '../i18n/services/multilingual.service';
+import {PlatformModule} from "../../../platform.module";
 
 // state
 export interface AppStoreI {
@@ -33,9 +31,7 @@ export interface AppStoreI {
     FormsModule,
     RouterModule,
     MultilingualModule,
-    MdButtonModule,
-    MdToolbarModule,
-    MdIconModule,
+    PlatformModule,
     StoreModule.provideStore({
       i18n: multilingualReducer,
       names: nameListReducer
@@ -46,14 +42,14 @@ export interface AppStoreI {
     NavbarComponent
   ],
   providers: [
-    NameListService,
-    MdIconRegistry
+    NameListService
   ],
   exports: [
     ToolbarComponent,
     NavbarComponent,
     CommonModule,
     FormsModule,
+    PlatformModule,
     RouterModule
   ]
 })
