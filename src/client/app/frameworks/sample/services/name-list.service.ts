@@ -37,7 +37,7 @@ export const nameListReducer: ActionReducer<any> = (state: any = [], action: Act
 
 @Injectable()
 export class NameListService extends Analytics {
-  public names: Observable<any>;
+  public names: Observable<string[]>;
 
   constructor(public analytics: AnalyticsService, private store: Store<any>, private http: Http) {
     super(analytics);
@@ -60,5 +60,14 @@ export class NameListService extends Analytics {
   add(name: string): void {
     this.track(NAME_LIST_ACTIONS.NAME_ADDED, { label: name });
     this.store.dispatch({ type: NAME_LIST_ACTIONS.NAME_ADDED, payload: name });
+  }
+
+  // TODO : Remove the get since names can be called directly
+  /**
+   * Returns an Observable for the HTTP GET request for the JSON resource.
+   * @return {string[]} The Observable for the HTTP request.
+   */
+  get(): Observable<string[]> {
+    return this.names;
   }
 }

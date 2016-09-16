@@ -55,7 +55,8 @@ export class ProjectConfig extends SeedAdvancedConfig {
       'button-toggle',
       'tabs',
       'toolbar',
-      'tooltip'
+      'tooltip',
+      'core'
     ];
 
     this.SYSTEM_CONFIG['packageConfigPaths'] = [
