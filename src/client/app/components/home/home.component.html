@@ -1,23 +1,32 @@
-<h2>
-  {{ 'LOVE_TECH' | translate }} <div class="smile"></div>
-</h2>
+<div class="home-card-container">
+  <md-card>
+    <md-card-title>{{ 'LOVE_TECH' | translate }}</md-card-title>
+    <md-card-content>
+      <p>
+        {{'ABOUT_REWARD' | translate}}
+      </p>
+      <p>
+        {{'ABOUT_ADD' | translate}}
+      </p>
 
-<p>
-  {{'ABOUT_REWARD' | translate}}
-</p>
-<p>
-  {{'ABOUT_ADD' | translate}}
-</p>
+      <form (submit)="addName()" class="home-form">
+        <div>
+          <md-input [(ngModel)]="newName" name="newName" class="home-input" [placeholder]="'INPUT_HINT' | translate" ngDefaultControl></md-input>
+          <button md-raised-button color="primary" type="submit" class="home-button">{{'ADD_BTN_TEXT' | translate}}</button>
+        </div>
+      </form>
 
-<form (submit)="addName()">
-  <input [(ngModel)]="newName" name="newName" [placeholder]="'INPUT_HINT' | translate">
-  <button type="submit">{{'ADD_BTN_TEXT' | translate}}</button>
-</form>
+      <md-list class="home-list">
+        <md-list-item *ngFor="let name of (nameListService.names | async)">
+          <h3 md-line>{{name}}</h3>
+          <p md-line class="demo-secondary-text">secondary text</p>
+        </md-list-item>
+      </md-list>
 
-<ul>
-  <li *ngFor="let name of (nameListService.names | async)">{{name}}</li>
-</ul>
+      <p>
+        <a class="link" (click)="readAbout()">About - RouterExtensions example</a>
+      </p>
 
-<p>
-  <a class="link" (click)="readAbout()">About - RouterExtensions example</a>
-</p>
+    </md-card-content>
+  </md-card>
+</div>

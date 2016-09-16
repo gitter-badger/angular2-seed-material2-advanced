@@ -6,17 +6,15 @@ import { RouterModule } from '@angular/router';
 
 // app
 import { AppComponent } from './app/components/app.component';
-import { HomeComponent } from './app/components/home/home.component';
-import { AboutComponent } from './app/components/about/about.component';
 import { routes } from './app/components/app.routes';
+import { AboutModule } from './app/components/about/about.module';
+import { HomeModule } from "./app/components/home/home.module";
 
 // feature modules
 import { CoreModule } from './app/frameworks/core/core.module';
 import { AnalyticsModule } from './app/frameworks/analytics/analytics.module';
 import { MultilingualModule } from './app/frameworks/i18n/multilingual.module';
 import { SampleModule } from './app/frameworks/sample/sample.module';
-
-import { AboutModule } from './app/components/about/about.module';
 
 // config
 import { Config, WindowService, ConsoleService } from './app/frameworks/core/index';
@@ -26,6 +24,7 @@ Config.DEBUG.LEVEL_4 = true;
 // sample config (extra)
 import { AppConfig } from './app/frameworks/sample/services/app-config';
 import { MultilingualService } from './app/frameworks/i18n/services/multilingual.service';
+
 // custom i18n language support
 MultilingualService.SUPPORTED_LANGUAGES = AppConfig.SUPPORTED_LANGUAGES;
 
@@ -48,11 +47,11 @@ if (String('<%= TARGET_DESKTOP %>') === 'true') {
     AnalyticsModule,
     MultilingualModule,
     SampleModule,
-    AboutModule
+    AboutModule,
+    HomeModule
   ],
   declarations: [
-    AppComponent,
-    HomeComponent
+    AppComponent
   ],
   providers: [
     {
