@@ -34,6 +34,7 @@ gulp.task('build.e2e', (done: any) =>
   runSequence('clean.dev',
               'tslint',
               'build.assets.dev',
+              'build.html_css',
               'build.js.e2e',
               'build.index.dev',
               done));

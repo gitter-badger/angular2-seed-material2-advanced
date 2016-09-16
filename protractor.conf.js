@@ -30,6 +30,12 @@ const config = {
     // needed for custom class decorators
     require("reflect-metadata");
     require("zone.js/dist/zone-node");
+    require("zone.js/dist/long-stack-trace-zone");
+    require("zone.js/dist/async-test");
+    require("zone.js/dist/fake-async-test");
+    require("zone.js/dist/sync-test");
+    require("zone.js/dist/proxy");
+    require("zone.js/dist/jasmine-patch");
 
     const SpecReporter = require('jasmine-spec-reporter');
     // add jasmine spec reporter
