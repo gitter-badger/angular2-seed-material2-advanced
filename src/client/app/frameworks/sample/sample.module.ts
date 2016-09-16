@@ -16,7 +16,6 @@ import { NavbarComponent } from './components/navbar.component';
 import { nameListReducer, NameListService } from './services/name-list.service';
 import { MultilingualModule } from '../i18n/multilingual.module';
 import { multilingualReducer, MultilingualStateI } from '../i18n/services/multilingual.service';
-import { MaterialModule } from '../material/material.module';
 
 // state
 export interface AppStoreI {

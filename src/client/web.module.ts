@@ -8,7 +8,7 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app/components/app.component';
 import { routes } from './app/components/app.routes';
 import { AboutModule } from './app/components/about/about.module';
-import { HomeModule } from "./app/components/home/home.module";
+import { HomeModule } from './app/components/home/home.module';
 
 // feature modules
 import { CoreModule } from './app/frameworks/core/core.module';

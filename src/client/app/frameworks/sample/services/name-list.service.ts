@@ -37,7 +37,7 @@ export const nameListReducer: ActionReducer<any> = (state: any = [], action: Act
 
 @Injectable()
 export class NameListService extends Analytics {
-  public names: Observable<string[]>;
+  public names: Observable<any>;
 
   constructor(public analytics: AnalyticsService, private store: Store<any>, private http: Http) {
     super(analytics);

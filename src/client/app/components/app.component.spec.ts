@@ -11,6 +11,11 @@ import {MultilingualModule} from '../frameworks/i18n/multilingual.module';
 import {AppComponent} from './app.component';
 import {HomeComponent} from './home/home.component';
 import {AboutComponent} from './about/about.component';
+import { MdListModule } from '@angular2-material/list';
+import { MdCardModule } from '@angular2-material/card';
+import { MdInputModule } from '@angular2-material/input';
+import { MdToolbarModule } from '@angular2-material/toolbar';
+import { MdIconModule, MdIconRegistry } from '@angular2-material/icon';
 
 const config:Route[] = [
   {path: '', component: HomeComponent},
@@ -20,7 +25,16 @@ const config:Route[] = [
 // test module configuration for each test
 const testModuleConfig = () => {
   TestBed.configureTestingModule({
-    imports: [FormsModule, MultilingualModule, RouterTestingModule.withRoutes(config)],
+    imports: [
+      FormsModule,
+      MultilingualModule,
+      RouterTestingModule.withRoutes(config),
+      MdCardModule,
+      MdListModule,
+      MdToolbarModule,
+      MdIconModule,
+      MdInputModule
+    ],
     declarations: [
       TestComponent, AppComponent,
       HomeComponent, AboutComponent,
@@ -29,7 +43,8 @@ const testModuleConfig = () => {
     providers: [
       TEST_CORE_PROVIDERS(),
       TEST_HTTP_PROVIDERS(),
-      NameListService
+      NameListService,
+      MdIconRegistry
     ]
   });
 };

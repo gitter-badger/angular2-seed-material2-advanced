@@ -8,6 +8,9 @@ import {
   Http
 } from '@angular/http';
 import { MockBackend } from '@angular/http/testing';
+import { MdCardModule } from '@angular2-material/card';
+import { MdInputModule } from '@angular2-material/input';
+import { MdListModule } from '@angular2-material/list';
 
 // libs
 import { StoreModule } from '@ngrx/store';
@@ -22,8 +25,16 @@ import { HomeComponent } from './home.component';
 // test module configuration for each test
 const testModuleConfig = () => {
   TestBed.configureTestingModule({
-    imports: [CoreModule, RouterTestingModule, AnalyticsModule,
-      MultilingualModule, StoreModule.provideStore({ names: nameListReducer })],
+    imports: [
+      CoreModule,
+      RouterTestingModule,
+      AnalyticsModule,
+      MultilingualModule,
+      StoreModule.provideStore({ names: nameListReducer }),
+      MdCardModule,
+      MdInputModule,
+      MdListModule
+    ],
     declarations: [HomeComponent, TestComponent],
     providers: [
       NameListService,
@@ -62,8 +73,8 @@ export function main() {
 
             fixture.detectChanges();
 
-            t.e(homeDOMEl.querySelectorAll('li').length).toEqual(1);
-            t.e(homeDOMEl.querySelectorAll('li')[0].textContent).toEqual('Minko');
+            t.e(homeDOMEl.querySelectorAll('md-list-item').length).toEqual(1);
+            t.e(homeDOMEl.querySelectorAll('md-list-item h3')[0].textContent).toEqual('Minko');
           });
       }));
   });
