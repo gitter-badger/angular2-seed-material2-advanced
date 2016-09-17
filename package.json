@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "A seed project for Angular2, material design, and all the features of the advanced seed.",
   "repository": {
-    "url": "https://github.com/Syncleus/driftlog-client"
+    "url": "https://github.com/Syncleus/angular2-seed-material2-advanced"
   },
   "scripts": {
     "build.desktop.mac": "rimraf desktop/mac/* && gulp desktop.mac",
@@ -60,7 +60,7 @@
       "name": "Jeffrey Phillips Freeman <freemo@gmail.com>"
     }
   ],
-  "license": "Apache-2.0",
+  "license": "MIT",
   "devDependencies": {
     "@angular/compiler-cli": "^0.6.1",
     "@angular/platform-server": "2.0.0",
