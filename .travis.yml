@@ -28,6 +28,7 @@ before_script:
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then nohup bash -c "webdriver-manager start 2>&1 &"; fi  # Protractor CI
 
 after_failure:
+  - pwd
   - cat /home/travis/build/Freemo/angular2-seed-advanced/npm-debug.log
 
 branches:
