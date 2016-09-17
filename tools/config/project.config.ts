@@ -32,7 +32,7 @@ export class ProjectConfig extends SeedAdvancedConfig {
     /* Add to or override NPM module configurations: */
     // this.mergeObject(this.PLUGIN_CONFIGS['browser-sync'], { ghostMode: false });
 
-    this.APP_TITLE = 'Driftlog';
+    this.APP_TITLE = 'angular2-seed-material2-advanced';
 
     this.ENABLE_SCSS = true;
 

@@ -9,7 +9,7 @@ t.describe('App', function() {
   });
 
   t.it('should have a title', function() {
-    t.e(browser.getTitle()).toEqual('Driftlog');
+    t.e(browser.getTitle()).toEqual('angular2-seed-material2-advanced');
   });
 
   t.it('should have <nav>', function() {

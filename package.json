@@ -1,7 +1,7 @@
 {
-  "name": "driftlog",
+  "name": "angular2-seed-material2-advanced",
   "version": "0.1.0",
-  "description": "A client for Driftlog",
+  "description": "A seed project for Angular2, material design, and all the features of the advanced seed.",
   "repository": {
     "url": "https://github.com/Syncleus/driftlog-client"
   },
