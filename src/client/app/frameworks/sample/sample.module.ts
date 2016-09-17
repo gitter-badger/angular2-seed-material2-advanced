@@ -13,7 +13,7 @@ import { NavbarComponent } from './components/navbar.component';
 import { nameListReducer, NameListService } from './services/name-list.service';
 import { MultilingualModule } from '../i18n/multilingual.module';
 import { multilingualReducer, MultilingualStateI } from '../i18n/services/multilingual.service';
-import {PlatformModule} from "../../../platform/index";
+import {PlatformModule} from '../../../platform/index';
 
 // state
 export interface AppStoreI {
